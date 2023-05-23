@@ -25,7 +25,7 @@ const swaggerUI = `<!DOCTYPE html>
       window.onload = () => {
         const h = React.createElement
         const ui = SwaggerUIBundle({
-          url: window.location.href + '.json',
+          url: window.location.href.split('?')[0] + '.json' + (window.location.href.split('?').length > 1? '?' + window.location.href.split('?')[1]: ''),
           dom_id: '#swagger-ui',
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset, 
         system => {
